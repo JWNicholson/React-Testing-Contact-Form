@@ -60,6 +60,19 @@ const ContactForm = () => {
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
+
+          {/* <div>
+            <label>
+              Pick your favorite color:
+              <select value={this.StaticRange.value} onChange={this.handleSubmit}>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="hotpink">Hot Pink</option>
+              </select>
+            </label>
+          </div> */}
+
         <input type="submit" />
       </form>
     </div>
