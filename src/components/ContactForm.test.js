@@ -9,7 +9,7 @@ test("renders correctly", () => {
 
 // test("make sure form inputs and submit button are working", () => {
 //     const { getByText, findByText, getByPlaceholderText} = render(<ContactForm/>);
-test("check firstName, lastName, message input and change", () => {
+test("check firstName, lastName, message - input and change", () => {
     const {getByLabelText,findByText} = render(<ContactForm />);
     
     const firstName = getByLabelText(/first name/i)
@@ -30,6 +30,13 @@ test("check firstName, lastName, message input and change", () => {
     fireEvent.change(message, {target: {name: 'message', value: 'you must be burning me behind my back'}})
     findByText(/message/i)
 
+});
+
+test('testing submit button', () => {
+    const{getByTestId, findByDisplayValue} = render(<ContactForm />);
+    const submitbutton = getByTestId(/submit/i)
+    fireEvent.submit(submitbutton)
+    findByDisplayValue(/submit/i)
 });
 
     // const firstName = getByPlaceholderText(/bill/i);
